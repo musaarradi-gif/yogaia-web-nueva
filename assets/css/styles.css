@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    YOGAIA — Stylesheet v2.0
    Fase: Demo Visual
    Variables → Reset → Base → Layout → Header → Nav →
@@ -271,32 +271,52 @@ h5 { font-size: var(--text-lg); }
   font-weight: var(--font-weight-semi);
 }
 
-/* Dropdown */
-.main-nav__item.has-dropdown:hover .nav-dropdown,
-.main-nav__item.has-dropdown:focus-within .nav-dropdown {
-  opacity: 1;
-  pointer-events: all;
-  transform: translateY(0);
-}
+/* ─── DROPDOWN: hover estable ───────────────────────────────
+   SOLUCIÓN AL PROBLEMA DE ZONA MUERTA:
+   - top: 100% (sin gap físico entre trigger y panel)
+   - padding-top: 12px (espacio visual dentro del panel, no fuera)
+   - transition-delay: 80ms en el cierre (gracia si el cursor va lento)
+   - ::before bridge invisible para mayor tolerancia
+   ─────────────────────────────────────────────────────────── */
 
 .nav-dropdown {
   position: absolute;
-  top: calc(100% + 10px);
+  top: 100%;             /* Era calc(100% + 10px) — ese gap era la causa del cierre brusco */
   left: 50%;
-  transform: translateX(-50%) translateY(-6px);
-  min-width: 210px;
+  transform: translateX(-50%) translateY(-4px);
+  min-width: 216px;
   background: var(--color-surface);
   border: 1px solid var(--color-border-lt);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-lg);
-  padding: var(--space-2);
+  padding: 12px var(--space-2) var(--space-2); /* padding-top crea el espacio visual */
   opacity: 0;
   pointer-events: none;
-  transition: opacity var(--transition), transform var(--transition);
+  /* Apertura rápida; cierre con 80ms de gracia */
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition-delay: 80ms;
+  z-index: 200;
 }
 
-.main-nav__item.has-dropdown:hover .nav-dropdown {
+/* Puente invisible entre el trigger y el panel.
+   Cubre el espacio donde el cursor podría salir del item */
+.nav-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -16px;    /* sube 16px por encima del panel */
+  left: -8px;
+  right: -8px;
+  height: 16px;  /* cubre cualquier micro-hueco */
+  background: transparent;
+}
+
+/* Al abrir: transición inmediata (sin delay) */
+.main-nav__item.has-dropdown:hover .nav-dropdown,
+.main-nav__item.has-dropdown:focus-within .nav-dropdown {
+  opacity: 1;
+  pointer-events: all;
   transform: translateX(-50%) translateY(0);
+  transition-delay: 0ms; /* abre sin espera */
 }
 
 .nav-dropdown a {
