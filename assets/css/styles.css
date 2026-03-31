@@ -1,4 +1,4 @@
-/* ============================================================
+﻿/* ============================================================
    YOGAIA — Stylesheet v2.0
    Fase: Demo Visual
    Variables → Reset → Base → Layout → Header → Nav →
@@ -1315,3 +1315,617 @@ textarea.form-control { resize: vertical; min-height: 140px; }
   .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
   .price-cards { grid-template-columns: 1fr; }
 }
+
+
+
+
+/* ═══════════════════════════════════════════════════════════════
+   YOGAIA v2.1 — Capa Visual Premium (reescritura limpia)
+   Afecta solo a index.html. El resto de páginas no se ven
+   afectadas porque usan clases genéricas del bloque base.
+   ═══════════════════════════════════════════════════════════════ */
+
+
+/* ─── HERO ───────────────────────────────────────────────────── */
+
+/* Fondo del hero con gradiente muy tenue */
+.hero {
+  background: linear-gradient(180deg, #ECF3F0 0%, var(--color-bg) 55%);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Círculo decorativo esquina derecha */
+.hero::after {
+  content: '';
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  border: 1px solid rgba(47, 91, 79, .08);
+  right: -180px;
+  top: -120px;
+  pointer-events: none;
+  box-shadow: inset 0 0 80px rgba(47, 91, 79, .04);
+}
+
+.hero > .container { position: relative; z-index: 1; }
+
+/* Badge eyebrow como pill */
+.hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(184, 150, 90, .1);
+  border: 1px solid rgba(184, 150, 90, .25);
+  border-radius: var(--radius-full);
+  padding: 0.28rem 0.9rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: #8C6E3A;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: var(--space-6);
+}
+
+.hero__eyebrow::before,
+.hero__eyebrow::after { display: none; }
+
+/* H1: tipografía de alto impacto */
+.hero__title {
+  font-size: clamp(2.8rem, 6.5vw, 4.75rem);
+  line-height: 1.06;
+  letter-spacing: -0.03em;
+  margin-bottom: var(--space-6);
+  max-width: 15ch;
+  margin-inline: auto;
+  color: var(--color-text);
+}
+
+/* Subtítulo del hero */
+.hero__desc {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+  line-height: 1.75;
+  max-width: 50ch;
+  margin-inline: auto;
+  margin-bottom: var(--space-10);
+}
+
+/* Botones del hero */
+.hero__actions {
+  gap: var(--space-3);
+}
+
+/* Indicadores de confianza */
+.hero-trust {
+  margin-top: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.hero-trust__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: 0.72rem;
+  color: var(--color-text-light);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.hero-trust__dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  opacity: 0.55;
+  flex-shrink: 0;
+}
+
+/* Panel hero: verde oscuro con luz interna */
+.hero-visual {
+  margin-top: var(--space-16);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  min-height: 360px;
+  background: linear-gradient(145deg, #1A2F2B 0%, #2F5B4F 45%, #3D6E61 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(30, 53, 48, .22), 0 4px 16px rgba(0,0,0,.1);
+  border: 1px solid rgba(255,255,255,.05);
+}
+
+/* Luz radial interna del panel */
+.hero-visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 70% at 25% 55%, rgba(184,150,90,.16) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 75% 20%, rgba(255,255,255,.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Círculo decorativo en el panel */
+.hero-visual::after {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.05);
+  top: -140px;
+  right: -80px;
+  pointer-events: none;
+}
+
+.hero-visual__inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-16) var(--space-8);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-5);
+}
+
+.hero-visual__yoga-symbol {
+  font-size: 4rem;
+  line-height: 1;
+  filter: drop-shadow(0 4px 16px rgba(0,0,0,.3));
+}
+
+.hero-visual__tagline {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: rgba(255,255,255,.72);
+  max-width: 38ch;
+  line-height: 1.6;
+}
+
+.hero-visual__label {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.35);
+}
+
+
+/* ─── BARRA DE STATS ─────────────────────────────────────────── */
+.stats-bar {
+  background: linear-gradient(90deg, #172724 0%, #2F5B4F 50%, #172724 100%);
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-10);
+}
+
+.stats-bar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 120% at 50% 50%, rgba(184,150,90,.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.stats-bar > .container { position: relative; }
+
+.stats-bar__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  text-align: center;
+}
+
+.stats-bar__grid > div {
+  padding-block: var(--space-2);
+}
+
+/* Separadores verticales */
+.stats-bar__grid > div + div {
+  border-left: 1px solid rgba(255,255,255,.07);
+}
+
+.stat-item__number {
+  display: block;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  color: var(--color-accent);
+  line-height: 1;
+  margin-bottom: var(--space-2);
+}
+
+.stat-item__label {
+  display: block;
+  font-size: 0.78rem;
+  color: rgba(255,255,255,.55);
+  letter-spacing: 0.03em;
+}
+
+
+/* ─── CARDS DE DISCIPLINAS (paneles de color) ────────────────── */
+
+.card__image-panel {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Gradientes únicos por disciplina */
+.card--hatha   .card__image-panel { background: linear-gradient(150deg, #2F5B4F 0%, #4A7D6E 100%); }
+.card--vinyasa .card__image-panel { background: linear-gradient(150deg, #364D5F 0%, #527A9A 100%); }
+.card--yin     .card__image-panel { background: linear-gradient(150deg, #5C3F4A 0%, #8B6670 100%); }
+
+/* Luz interna en los paneles */
+.card__image-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 40%, rgba(255,255,255,.09) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+/* Círculo decorativo esquina inferior derecha */
+.card__image-panel::after {
+  content: '';
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.07);
+  pointer-events: none;
+}
+
+.card__image-panel-symbol {
+  font-size: 2.6rem;
+  position: relative;
+  z-index: 1;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,.22));
+}
+
+.card__image-panel-title {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: rgba(255,255,255,.75);
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: 0.03em;
+}
+
+/* Bordes de acento superior */
+.card--accent-top        { border-top: 3px solid var(--color-accent); }
+.card--accent-top-green  { border-top: 3px solid var(--color-primary); }
+
+
+/* ─── CARDS DE FORMACIÓN ─────────────────────────────────────── */
+.card--formation {
+  position: relative;
+}
+
+.card--formation .card__body {
+  padding: var(--space-8) var(--space-8) var(--space-8);
+}
+
+/* Número flotante decorativo */
+.card__number {
+  font-family: var(--font-serif);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--color-border-lt);
+  position: absolute;
+  top: var(--space-4);
+  right: var(--space-6);
+  user-select: none;
+  pointer-events: none;
+  letter-spacing: -0.04em;
+}
+
+
+/* ─── CARDS BIENESTAR ────────────────────────────────────────── */
+.card.card--bienestar .card__body {
+  padding: var(--space-8);
+}
+
+.card.card--bienestar .card__icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: var(--space-4);
+}
+
+
+/* ─── BLOQUE CORPORATIVO ─────────────────────────────────────── */
+.corporate-band {
+  background: linear-gradient(130deg, var(--color-primary) 0%, #1A2F2B 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-10) var(--space-12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-8);
+  flex-wrap: wrap;
+  margin-top: var(--space-8);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(30,53,48,.25);
+}
+
+/* Luz radial de fondo */
+.corporate-band::before {
+  content: '';
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,150,90,.12) 0%, transparent 70%);
+  right: -60px;
+  top: -120px;
+  pointer-events: none;
+}
+
+.corporate-band__eyebrow {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-3);
+}
+
+.corporate-band__title {
+  color: var(--color-white);
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+  line-height: 1.25;
+}
+
+.corporate-band__desc {
+  color: rgba(255,255,255,.62);
+  font-size: var(--text-sm);
+  max-width: 46ch;
+  line-height: 1.75;
+}
+
+.corporate-band__cta { flex-shrink: 0; }
+
+
+/* ─── ESTUDIO HALF-SPLIT VISUAL ──────────────────────────────── */
+.studio-visual {
+  background: linear-gradient(150deg, #D8EBE6 0%, #BDD6D0 50%, #A8C8C1 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 460px;
+}
+
+/* Círculo grande esquina superior izquierda */
+.studio-visual::before {
+  content: '';
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border-radius: 50%;
+  border: 36px solid rgba(47, 91, 79, .09);
+  top: -100px;
+  left: -80px;
+  pointer-events: none;
+}
+
+/* Círculo pequeño esquina inferior derecha */
+.studio-visual::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 1px solid rgba(47, 91, 79, .14);
+  bottom: 30px;
+  right: 30px;
+  pointer-events: none;
+}
+
+.studio-visual__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-12);
+}
+
+.studio-visual__symbol {
+  font-size: 3.8rem;
+  margin-bottom: var(--space-5);
+  display: block;
+  filter: drop-shadow(0 3px 10px rgba(47,91,79,.18));
+}
+
+.studio-visual__text {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--color-primary);
+  line-height: 1.6;
+  opacity: 0.72;
+}
+
+
+/* ─── TESTIMONIOS ────────────────────────────────────────────── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.testimonial-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border-lt);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  position: relative;
+  transition: box-shadow var(--transition);
+}
+
+.testimonial-card:hover {
+  box-shadow: var(--shadow-sm);
+}
+
+/* Comilla tipográfica */
+.testimonial-card::before {
+  content: '\201C';
+  font-family: var(--font-serif);
+  font-size: 5rem;
+  color: var(--color-accent);
+  opacity: 0.18;
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-5);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.testimonial-card__quote {
+  font-style: italic;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+  line-height: 1.8;
+  padding-top: var(--space-6);
+  font-size: 0.95rem;
+}
+
+.testimonial-card__author {
+  display: block;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.testimonial-card__role {
+  display: block;
+  font-size: var(--text-xs);
+  color: var(--color-text-light);
+  margin-top: 3px;
+}
+
+
+/* ─── SEPARADORES DE SECCIÓN ─────────────────────────────────── */
+.section-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    var(--color-border-lt) 15%,
+    var(--color-border) 50%,
+    var(--color-border-lt) 85%,
+    transparent 100%
+  );
+  margin: 0;
+}
+
+.section--ruled {
+  border-top: 1px solid var(--color-border-lt);
+}
+
+
+/* ─── FOOTER: SOCIAL + UBICACIÓN ─────────────────────────────── */
+.footer-social {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(255,255,255,.13);
+  font-size: 0.85rem;
+  opacity: 0.55;
+  transition: opacity var(--transition), border-color var(--transition);
+  color: var(--color-white);
+}
+
+.footer-social a:hover {
+  opacity: 1;
+  border-color: rgba(255,255,255,.35);
+}
+
+.footer-location {
+  margin-top: var(--space-4);
+  font-size: var(--text-xs);
+  color: rgba(255,255,255,.4);
+  line-height: 1.8;
+}
+
+
+/* ─── MEDIA QUERIES v2.1 ─────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .corporate-band {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: var(--space-8) var(--space-8);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+
+  .studio-visual { min-height: 320px; }
+}
+
+@media (max-width: 768px) {
+  /* Hero */
+  .hero-visual { min-height: 260px; }
+  .hero-visual__yoga-symbol { font-size: 3rem; }
+  .hero-visual__tagline { font-size: 1rem; }
+
+  .hero__title { font-size: clamp(2.2rem, 8vw, 3rem); }
+  .hero-trust { gap: var(--space-4); }
+  .hero-trust__item { font-size: 0.68rem; }
+
+  /* Stats */
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-bar__grid > div + div { border-left: none; }
+  .stats-bar__grid > div:nth-child(3) { border-left: none; }
+
+  /* Cards */
+  .card__number { font-size: 2.8rem; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+
+  /* Estudio */
+  .studio-visual { min-height: 260px; }
+
+  /* Corporate */
+  .corporate-band { padding: var(--space-8) var(--space-6); }
+  .corporate-band__title { font-size: var(--text-xl); }
+}
+
+@media (max-width: 480px) {
+  .hero-visual { min-height: 220px; }
+  .hero-visual__inner { padding: var(--space-10) var(--space-6); }
+  .hero-trust { flex-direction: column; gap: var(--space-2); }
+  .stats-bar__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
