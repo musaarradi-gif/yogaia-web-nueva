@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -13,17 +13,27 @@
 </head>
 <body>
 
+<!-- ═══ HEADER ════════════════════════════════════════════════ -->
+<!-- ═══ HEADER ════════════════════════════════════════════════ -->
 <header class="site-header" role="banner">
   <div class="container">
     <div class="site-header__inner">
-      <a href="../../" class="site-logo" aria-label="Yogaia — inicio">Yoga<span>ia</span></a>
-      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav"><span></span><span></span><span></span></button>
+
+      <a href="../../" class="site-logo" aria-label="Yogaia — inicio">
+        Yoga<span>ia</span>
+      </a>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+
       <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
+
         <div class="main-nav__item has-dropdown">
           <a href="../../clases/" class="main-nav__link">Clases <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dropdown">
             <a href="../../clases/">Todas las clases</a>
-            <a href="../../clases/hatha-raja/">Hatha &amp; Raja Yoga</a>
+            <a href="../../clases/hatha-raja/">Hatha & Raja Yoga</a>
             <a href="../../clases/vinyasa/">Vinyasa Flow</a>
             <a href="../../clases/yin/">Yin Yoga</a>
             <a href="../../clases/para-principiantes/">Para principiantes</a>
@@ -32,6 +42,7 @@
             <a href="../../clases/clase-de-prueba/">Clase de prueba</a>
           </div>
         </div>
+
         <div class="main-nav__item has-dropdown">
           <a href="../../formaciones/" class="main-nav__link">Formaciones <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dropdown">
@@ -41,7 +52,11 @@
             <a href="../../formaciones/intensivo-verano/">Intensivo de verano</a>
           </div>
         </div>
-        <div class="main-nav__item"><a href="../../talleres/" class="main-nav__link">Talleres</a></div>
+
+        <div class="main-nav__item">
+          <a href="../../talleres/" class="main-nav__link">Talleres</a>
+        </div>
+
         <div class="main-nav__item has-dropdown">
           <a href="../../bienestar/" class="main-nav__link">Bienestar <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dropdown">
@@ -51,6 +66,7 @@
             <a href="../../empresas/">Yoga para empresas</a>
           </div>
         </div>
+
         <div class="main-nav__item has-dropdown">
           <a href="../../sobre-yogaia/" class="main-nav__link">Estudio <svg class="nav-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></a>
           <div class="nav-dropdown">
@@ -63,6 +79,7 @@
             <a href="../../faq/">FAQ</a>
           </div>
         </div>
+
         <a href="../../clases/clase-de-prueba/" class="btn btn--primary btn--sm nav-cta">Clase de prueba</a>
       </nav>
     </div>
@@ -169,43 +186,62 @@
   </div>
 </section>
 
+<!-- ═══ FOOTER ════════════════════════════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="container">
     <div class="site-footer__grid">
+
       <div class="footer-brand">
         <div class="footer-brand__logo">Yoga<span>ia</span></div>
         <p class="footer-brand__desc">Estudio de yoga en Barcelona. Clases, formaciones y bienestar integral para todos los niveles desde 2012.</p>
+        <div class="footer-social" aria-label="Redes sociales">
+          <a href="#" aria-label="Instagram de Yogaia">📷</a>
+          <a href="#" aria-label="Facebook de Yogaia">𝑓</a>
+          <a href="#" aria-label="YouTube de Yogaia">▶</a>
+        </div>
         <p class="footer-location">📍 Barcelona, España<br>hola@yogaia.es</p>
       </div>
-      <div>
-        <h3 class="footer-col__title">Formaciones</h3>
-        <ul class="footer-col__links">
-          <li><a href="../../formaciones/">Todas las formaciones</a></li>
-          <li><a href="../../formaciones/200-horas/">200 Horas RYT</a></li>
-          <li><a href="../../formaciones/300-horas/">300 Horas RYT</a></li>
-          <li><a href="../../formaciones/intensivo-verano/">Intensivo verano</a></li>
-        </ul>
-      </div>
+
       <div>
         <h3 class="footer-col__title">Práctica</h3>
         <ul class="footer-col__links">
-          <li><a href="../../clases/">Clases</a></li>
-          <li><a href="../../clases/clase-de-prueba/">Clase de prueba</a></li>
+          <li><a href="../../clases/">Todas las clases</a></li>
           <li><a href="../../clases/horarios/">Horarios</a></li>
+          <li><a href="../../clases/tarifas/">Tarifas</a></li>
+          <li><a href="../../clases/clase-de-prueba/">Clase de prueba</a></li>
+          <li><a href="../../clases/para-principiantes/">Principiantes</a></li>
         </ul>
       </div>
+
       <div>
-        <h3 class="footer-col__title">Yogaia</h3>
+        <h3 class="footer-col__title">Formación</h3>
         <ul class="footer-col__links">
-          <li><a href="../../equipo/">El equipo</a></li>
+          <li><a href="../../formaciones/">Formaciones</a></li>
+          <li><a href="../../formaciones/200-horas/">200 Horas RYT</a></li>
+          <li><a href="../../formaciones/300-horas/">300 Horas RYT</a></li>
+          <li><a href="../../formaciones/intensivo-verano/">Intensivo verano</a></li>
+          <li><a href="../../talleres/">Talleres</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="footer-col__title">Estudio</h3>
+        <ul class="footer-col__links">
+          <li><a href="../../sobre-yogaia/">Sobre Yogaia</a></li>
+          <li><a href="../../estudio/">El estudio</a></li>
+          <li><a href="../../equipo/">Equipo</a></li>
+          <li><a href="../../bienestar/">Bienestar</a></li>
           <li><a href="../../blog/">Blog</a></li>
           <li><a href="../../contacto/">Contacto</a></li>
           <li><a href="../../faq/">FAQ</a></li>
         </ul>
       </div>
+
     </div>
+
     <div class="site-footer__bottom">
       <span>© 2025 Yogaia · Estudio de yoga en Barcelona</span>
+      <span style="opacity: .5;">Diseño web en desarrollo 🌱</span>
     </div>
   </div>
 </footer>
@@ -213,3 +249,5 @@
 <script src="../../assets/js/main.js"></script>
 </body>
 </html>
+
+
